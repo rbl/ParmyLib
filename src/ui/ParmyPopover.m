@@ -45,7 +45,7 @@
 	// For now always put our window frame at a fixed position from the 
 	// parent view.
 	UIWindow* win = [[UIApplication sharedApplication] keyWindow];
-	CGRect pf = [win convertRect:_parent.frame fromView:_parent];
+	CGRect pf = [win convertRect:_parent.bounds fromView:_parent];
 	
 	self.windowNib = [[[UIImageView alloc] initWithImage:[[ParmyImageFactory sharedInstance] popoverFrameNibPointedUp:YES]] autorelease];
 	

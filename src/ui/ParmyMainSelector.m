@@ -53,49 +53,49 @@ CGFloat gWidth;
 		frame.origin.x += frame.size.width;
 		frame.size.width = 32;
 		
-		self.btnA = [UIButton buttonWithType:UIButtonTypeCustom];
-		_btnA.frame = frame;
-		[_btnA setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStateBase]
-				   forState:UIControlStateNormal];
-		[_btnA setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStatePressed]
-			   forState:UIControlStateSelected];
-		[_btnA setTitle:@"A" forState:UIControlStateNormal];
-		[self addSubview:_btnA];
-		[_btnA addTarget:self action:@selector(actionSetA:) forControlEvents:UIControlEventTouchUpInside];
-
-		// Sidebar to get this indicator on the page behind the button
-		CGRect selFrame = frame;
-		selFrame.origin.y -= 10.0;
-		selFrame.size.height += 20;
-		self.selectionIndicator = [[[UIView alloc] initWithFrame:selFrame] autorelease];
-		_selectionIndicator.backgroundColor = [UIColor yellowColor];
-		_selectionIndicator.alpha = 0.3;
-		_selectionIndicator.userInteractionEnabled = NO;
-
+//		self.btnA = [UIButton buttonWithType:UIButtonTypeCustom];
+//		_btnA.frame = frame;
+//		[_btnA setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStateBase]
+//				   forState:UIControlStateNormal];
+//		[_btnA setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStatePressed]
+//			   forState:UIControlStateSelected];
+//		[_btnA setTitle:@"A" forState:UIControlStateNormal];
+//		[self addSubview:_btnA];
+//		[_btnA addTarget:self action:@selector(actionSetA:) forControlEvents:UIControlEventTouchUpInside];
+//
+//		// Sidebar to get this indicator on the page behind the button
+//		CGRect selFrame = frame;
+//		selFrame.origin.y -= 10.0;
+//		selFrame.size.height += 20;
+//		self.selectionIndicator = [[[UIView alloc] initWithFrame:selFrame] autorelease];
+//		_selectionIndicator.backgroundColor = [UIColor yellowColor];
+//		_selectionIndicator.alpha = 0.3;
+//		_selectionIndicator.userInteractionEnabled = NO;
+//
+//		
+//		frame.origin.x += frame.size.width;
+//		frame.size.width = 32;
+//		self.btnB = [UIButton buttonWithType:UIButtonTypeCustom];
+//		_btnB.frame = frame;
+//		[_btnB setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStateBase]
+//			   forState:UIControlStateNormal];
+//		[_btnB setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStatePressed]
+//			   forState:UIControlStateSelected];
+//		[_btnB setTitle:@"B" forState:UIControlStateNormal];
+//		[self addSubview:_btnB];
+//		[_btnB addTarget:self action:@selector(actionSetB:) forControlEvents:UIControlEventTouchUpInside];
+//
+//
+//		
+//		[self addSubview:_selectionIndicator];
+		
+		
+		
+		
 		
 		frame.origin.x += frame.size.width;
 		frame.size.width = 32;
-		self.btnB = [UIButton buttonWithType:UIButtonTypeCustom];
-		_btnB.frame = frame;
-		[_btnB setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStateBase]
-			   forState:UIControlStateNormal];
-		[_btnB setBackgroundImage:[[ParmyImageFactory sharedInstance] middleCapsuleAtWidth:frame.size.width forState:PImageStatePressed]
-			   forState:UIControlStateSelected];
-		[_btnB setTitle:@"B" forState:UIControlStateNormal];
-		[self addSubview:_btnB];
-		[_btnB addTarget:self action:@selector(actionSetB:) forControlEvents:UIControlEventTouchUpInside];
-
-
-		
-		[self addSubview:_selectionIndicator];
-		
-		
-		
-		
-		
-		frame.origin.x += frame.size.width;
-		frame.size.width = 32;
-		self.btnGear = [UIButton buttonWithType:UIButtonTypeCustom];
+		self.btnGear = [UIButton buttonWithType:UIButtonTypeInfoLight];
 		_btnGear.frame = frame;
 		[_btnGear setBackgroundImage:[[ParmyImageFactory sharedInstance] rightCapsuleAtWidth:frame.size.width forState:PImageStateBase]
 			   forState:UIControlStateNormal];
@@ -107,8 +107,8 @@ CGFloat gWidth;
 
 		frame.origin.x = 0;
 		frame.size.width = _btnParam.bounds.size.width +
-							_btnA.bounds.size.width +
-							_btnB.bounds.size.width +
+//							_btnA.bounds.size.width +
+//							_btnB.bounds.size.width +
 							_btnGear.bounds.size.width;
 
 		self.frame = frame;
@@ -182,6 +182,10 @@ CGFloat gWidth;
 -(void) actionSetA:(UIButton*) sender
 {
 	_pressed.selected = NO;
+	_pressed = nil;
+	
+	if ([_btnParam.titleLabel.text isEqual:@"Param"]) return;
+	
 	sender.selected = YES;
 
 	_selectionIndicator.center = sender.center;
@@ -210,11 +214,12 @@ CGFloat gWidth;
 
 -(void) actionGear:(UIButton*) sender
 {
-	_pressed.selected = NO;
-	sender.selected = YES;
-	[self removeFromSuperview];
-
-	_pressed = sender;
+	[self actionSetA:sender];
+//	_pressed.selected = NO;
+//	sender.selected = YES;
+//	[self removeFromSuperview];
+//
+//	_pressed = sender;
 }
 
 
@@ -247,13 +252,13 @@ CGFloat gWidth;
 	// Now re-lay out everything from position 0
 	_btnParam.frame = frame;
 	
-	frame.origin.x += frame.size.width;
-	frame.size.width = _btnA.frame.size.width;
-	_btnA.frame = frame;
-	
-	frame.origin.x += frame.size.width;
-	frame.size.width = _btnB.frame.size.width;
-	_btnB.frame = frame;
+//	frame.origin.x += frame.size.width;
+//	frame.size.width = _btnA.frame.size.width;
+//	_btnA.frame = frame;
+//	
+//	frame.origin.x += frame.size.width;
+//	frame.size.width = _btnB.frame.size.width;
+//	_btnB.frame = frame;
 
 	frame.origin.x += frame.size.width;
 	frame.size.width = _btnGear.frame.size.width;
@@ -268,9 +273,9 @@ CGFloat gWidth;
 	gFrame = self.frame;
 	gWidth = _btnParam.frame.size.width;
 	
-	frame = _selectionIndicator.frame;
-	frame.origin.x += delta;
-	_selectionIndicator.frame = frame;
+//	frame = _selectionIndicator.frame;
+//	frame.origin.x += delta;
+//	_selectionIndicator.frame = frame;
 
 	[_btnParam setTitle:key forState:UIControlStateNormal];		
 }
