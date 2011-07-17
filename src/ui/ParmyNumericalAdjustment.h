@@ -23,6 +23,8 @@
 	
 	UIButton* _decreaseSingle;
 	UIButton* _increaseSingle;
+	
+	id _delegate;
 }
 
 @property (nonatomic, retain) UISlider *slider;
@@ -38,5 +40,7 @@
 
 
 -(id) initForValue:(NSNumber*)num withDelegate:(id)delegate;
+
+-(void) updateLabels;
 
 @end

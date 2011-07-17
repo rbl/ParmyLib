@@ -32,6 +32,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ParmyRegistry)
 		{
 			_paramSets[i] = [[NSMutableDictionary alloc] init];
 			_unsetKeys = [[NSMutableDictionary alloc] init];
+			_bindings = [[NSMutableDictionary alloc] init];
 		}
 	}
 	return self;
@@ -40,6 +41,43 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ParmyRegistry)
 -(void) sendParamChangeNotificationForKey:(NSString*)key
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:PARMYLIB_PARAM_CHANGED object:key];
+	
+	// Find bindings and poke them
+	NSArray* bindList = [_bindings objectForKey:key];
+	if (!bindList) return;
+	
+	for (NSArray* binding in bindList)
+	{
+		UIView* target = (UIView*)[binding objectAtIndex:0];
+		NSString* pN =  (NSString*)[binding objectAtIndex:1];
+		NSNumber *num = (NSNumber*)[_paramSets[_currentSet] objectForKey:key];
+		
+		CGRect frame = target.frame;
+		if ([pN isEqual:@"x"]) 
+		{
+			frame.origin.x = [num floatValue];
+			target.frame = frame;
+		}
+		else if ([pN isEqual:@"y"]) 
+		{
+			frame.origin.y = [num floatValue];
+			target.frame = frame;
+		}
+		else if ([pN isEqual:@"width"]) 
+		{
+			frame.size.width = [num floatValue];
+			target.frame = frame;
+		}
+		else if ([pN isEqual:@"height"]) 
+		{
+			frame.size.height = [num floatValue];
+			target.frame = frame;
+		}
+		else
+		{
+			[target setValue:num forKey:pN];
+		}		
+	}
 }
 
 
@@ -159,5 +197,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ParmyRegistry)
 {
 	return [_paramSets[set] objectForKey:key];
 }
+
+
+-(void) bindName:(NSString*)key onto:(NSString*)pName ofObject:(NSObject*)obj
+{
+	NSMutableArray* array = (NSMutableArray*)[_bindings objectForKey:key];
+	
+	if (!array)
+	{
+		array = [NSMutableArray array];
+		[_bindings setObject:array forKey:key];
+	}
+	
+	[array addObject:[NSArray arrayWithObjects:obj, pName, nil]];
+}
+
+
 
 @end

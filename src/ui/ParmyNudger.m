@@ -35,6 +35,7 @@
 		[_btnLeft addTarget:_delegate action:left forControlEvents:UIControlEventTouchUpInside];
 		[self addSubview:_btnLeft];
 		
+		bf.origin.x += bf.size.width;
 		self.btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
 		[_btnRight setBackgroundColor:[UIColor whiteColor]];
 		[_btnRight setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];

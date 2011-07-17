@@ -31,7 +31,7 @@
 		self.key = key;
 		
 		self.view = [[[UIView alloc] initWithFrame:CGRectMake(0,0,100,100)] autorelease];
-		self.view.backgroundColor = [UIColor purpleColor];
+		self.view.backgroundColor = [UIColor redColor];
 		
 		// Find the right type of adjustment sub-view to load
 		NSObject* obj = [[ParmyRegistry sharedInstance] objectInSet:_set forKey:_key];
@@ -59,10 +59,16 @@
 {
 	self.adjView = [[[ParmyNumericalAdjustment alloc] initForValue:num withDelegate:self] autorelease];
 	
-	_adjView.frame = CGRectMake(0,0,100,100);
+	//_adjView.frame = CGRectMake(0,0,200,100);
 	_adjView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	
 	[_view addSubview:_adjView];
+}
+
+
+-(void) valueChanged:(double)val
+{
+	[[ParmyRegistry sharedInstance] setDouble:val forKey:_key];
 }
 
 

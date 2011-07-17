@@ -28,20 +28,41 @@
 {
 	if ((self = [super initWithFrame:CGRectMake(0,0,100,100)]))
 	{
-		CGRect frame = CGRectMake(0,5,22,100);
+		_delegate = delegate;
+		self.backgroundColor = [UIColor blueColor];
+		
+//		CGRect frame = CGRectMake(30, 30, 30, 30);
+//		UIView* v = [[[UIView alloc] initWithFrame:frame] autorelease];
+//		//v.frame = CGRectMake(0, 0, 768, 1024);
+//		v.backgroundColor = [UIColor yellowColor];
+//		[self addSubview:v];
+		
+		
+		CGRect frame = CGRectMake(0,5,100,22);
 		self.currentLabel = [[[UILabel alloc] initWithFrame:frame] autorelease];
 		_currentLabel.textAlignment = UITextAlignmentCenter;
 		_currentLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+		_currentLabel.text = @"Cur";
+		_currentLabel.backgroundColor = [UIColor clearColor];
 		[self addSubview:_currentLabel];
+		
+//		UIView* v = [[[UIView alloc] initWithFrame:frame] autorelease];
+//		v.frame = CGRectMake(0, 0, 768, 1024);
+//		v.backgroundColor = [UIColor yellowColor];
+//		[self addSubview:v];
 		
 		self.minLabel = [[[UILabel alloc] initWithFrame:frame] autorelease];
 		_minLabel.textAlignment = UITextAlignmentLeft;
 		_minLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+		_minLabel.text = @"min";
+		_minLabel.backgroundColor = [UIColor clearColor];
 		[self addSubview:_minLabel];
 		
 		self.maxLabel = [[[UILabel alloc] initWithFrame:frame] autorelease];
 		_maxLabel.textAlignment = UITextAlignmentRight;
 		_maxLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+		_maxLabel.text = @"MAX";
+		_maxLabel.backgroundColor = [UIColor clearColor];
 		[self addSubview:_maxLabel];
 		
 		// Next row
@@ -128,6 +149,7 @@
 		[self addSubview:nudger];
 		
 		
+		[self updateLabels];
 	}
 	return self;
 }
@@ -150,30 +172,96 @@
 
 -(void) nudgeMinDown
 {
+	float span = _slider.maximumValue - _slider.minimumValue;
+	
+	float delta = span/2;
+	_slider.minimumValue = _slider.minimumValue - delta;
+	[self updateLabels];
 }
 
 -(void) nudgeMinUp
 {
+	float span = _slider.maximumValue - _slider.minimumValue;
+	
+	float delta = span/2;
+	_slider.minimumValue = _slider.minimumValue + delta;
+	[self updateLabels];
+}
+
+-(float) increment
+{
+	float span = _slider.maximumValue - _slider.minimumValue;
+	float delta = span/2;
+	
+	float inc = 1.0;
+	if (delta < 1.0) 
+	{
+		inc = 0.1;
+	}
+	else if (delta < 100.0)
+	{
+		inc = 1;
+	}
+	else if (delta < 1000.0)
+	{
+		inc = 10;
+	}
+	else
+	{
+		inc = delta / 100.0;
+	}
+	
+	return inc;
 }
 
 -(void) nudgeValueDown
 {
+	_slider.value -= [self increment];
+
+
+	[self updateLabels];
 }
 
 -(void) nudgeValueUp
 {
+	_slider.value += [self increment];
+
+	[self updateLabels];
 }
 
 -(void) nudgeMaxDown
 {
+	float span = _slider.maximumValue - _slider.minimumValue;
+	
+	float delta = span/2;
+	_slider.maximumValue = _slider.maximumValue - delta;
+	[self updateLabels];	
 }
 
 -(void) nudgeMaxUp
 {
+	float span = _slider.maximumValue - _slider.minimumValue;
+	
+	float delta = span/2;
+	_slider.maximumValue = _slider.maximumValue + delta;
+	[self updateLabels];	
 }
 
 -(void) sliderMoved:(id)sender
 {
+	[self updateLabels];
+}
+
+-(void) updateLabels
+{
+	_currentLabel.text = [NSString stringWithFormat:@"%.0f", _slider.value];
+	_minLabel.text = [NSString stringWithFormat:@"%.0f", _slider.minimumValue];
+	_maxLabel.text = [NSString stringWithFormat:@"%.0f", _slider.maximumValue];
+	
+	[_slider setValue:_slider.value+0.1 animated:NO];
+	[_slider setValue:_slider.value animated:YES];
+
+	[_delegate valueChanged:_slider.value];
 }
 
 @end

@@ -20,6 +20,8 @@
 -(int) pivd:(int)defaultValue;
 -(NSString*) psvd:(NSString*)defaultValue;
 
+-(void) bindOnto:(NSString*)pName ofObject:(NSObject*)obj;
+
 @end
 
 
@@ -35,6 +37,7 @@
 +(void) addToWindow:(UIWindow*)window;
 +(void) activateInWindow:(UIWindow*)window;
 +(void) toggleInWindow:(UIWindow*)window;
+
 
 @end
 

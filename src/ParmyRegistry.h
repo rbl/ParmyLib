@@ -14,6 +14,8 @@
 	NSMutableDictionary* _paramSets[10];
 	NSMutableDictionary* _unsetKeys;
 	
+	NSMutableDictionary* _bindings;
+	
 	int _currentSet;
 }
 
@@ -34,5 +36,7 @@
 
 -(NSArray*) allKeys;
 -(id) objectInSet:(int)set forKey:(NSString*)key;
+
+-(void) bindName:(NSString*)key onto:(NSString*)pName ofObject:(NSObject*)obj;
 
 @end

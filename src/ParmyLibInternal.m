@@ -65,6 +65,11 @@
 	return [[ParmyRegistry sharedInstance] stringForKey:self withDefault:defaultValue];
 }
 
+
+-(void) bindOnto:(NSString*)pName ofObject:(NSObject*)obj
+{
+	[[ParmyRegistry sharedInstance] bindName:self onto:pName ofObject:obj];
+}
 @end
 
 
