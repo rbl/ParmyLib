@@ -11,6 +11,7 @@
 #import "ParmyImageFactory.h"
 
 #import "ParmyParamSelectPopover.h"
+#import "ParmyAdjustmentPopover.h"
 #import "ParmyRegistry.h"
 
 @implementation ParmyMainSelector
@@ -187,7 +188,13 @@ CGFloat gWidth;
 	[[ParmyRegistry sharedInstance] setCurrentSet:0];
 	
 	_pressed = sender;
-	
+
+	// Launch a thingie
+	ParmyAdjustmentPopover* adj = [[[ParmyAdjustmentPopover alloc] initOnView:sender 
+																	  withKey:_btnParam.titleLabel.text 
+																	   andSet:0] autorelease];
+	self.popover = adj;
+	[adj present];
 }
 
 -(void) actionSetB:(UIButton*) sender

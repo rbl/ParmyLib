@@ -13,7 +13,7 @@
 
 @interface ParmyAdjustmentPopover()
 
--(void) loadNumericalAdjustment;
+-(void) loadNumericalAdjustment:(NSNumber*)num;
 
 @end
 
@@ -34,11 +34,11 @@
 		self.view.backgroundColor = [UIColor purpleColor];
 		
 		// Find the right type of adjustment sub-view to load
-		NSObject* obj = [[ParmyRegistry sharedInstance] objectInSet:_set ForKey:_key];
+		NSObject* obj = [[ParmyRegistry sharedInstance] objectInSet:_set forKey:_key];
 		
 		if ([obj isKindOfClass:[NSNumber class]])
 		{
-			[self loadNumericalAdjustment:obj];
+			[self loadNumericalAdjustment:(NSNumber*)obj];
 		}
 		// else something else ...
     }
@@ -57,8 +57,6 @@
 
 -(void) loadNumericalAdjustment:(NSNumber*)num
 {
-	bool isFloat = YES;	
-	
 	self.adjView = [[[ParmyNumericalAdjustment alloc] initForValue:num withDelegate:self] autorelease];
 	
 	_adjView.frame = CGRectMake(0,0,100,100);

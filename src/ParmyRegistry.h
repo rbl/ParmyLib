@@ -33,6 +33,6 @@
 -(void) replaceParamSet:(int)set with:(NSDictionary*)dict;
 
 -(NSArray*) allKeys;
--(id) objectForKey:(NSString*)key;
+-(id) objectInSet:(int)set forKey:(NSString*)key;
 
 @end

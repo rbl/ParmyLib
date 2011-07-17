@@ -155,7 +155,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ParmyRegistry)
 	return [_paramSets[0] allKeys];
 }
 
--(id) objectInSet:(int)set ForKey:(NSString*)key
+-(id) objectInSet:(int)set forKey:(NSString*)key
 {
 	return [_paramSets[set] objectForKey:key];
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1FD7A513D3502000FE2247 /* ParmyNudger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D1FD7A313D3502000FE2247 /* ParmyNudger.h */; };
+		3D1FD7A613D3502000FE2247 /* ParmyNudger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1FD7A413D3502000FE2247 /* ParmyNudger.m */; };
 		3D6F1E4213D282C300208A82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6F1E4113D282C300208A82 /* UIKit.framework */; };
 		3D6F1E4713D2830A00208A82 /* ParmyLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1E4613D2830A00208A82 /* ParmyLib.h */; };
 		3D6F1E5613D2860400208A82 /* ParmyRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1E5413D2860400208A82 /* ParmyRegistry.h */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D1FD7A313D3502000FE2247 /* ParmyNudger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyNudger.h; sourceTree = "<group>"; };
+		3D1FD7A413D3502000FE2247 /* ParmyNudger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyNudger.m; sourceTree = "<group>"; };
 		3D6F1E4113D282C300208A82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3D6F1E4613D2830A00208A82 /* ParmyLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParmyLib.h; path = include/ParmyLib.h; sourceTree = "<group>"; };
 		3D6F1E5413D2860400208A82 /* ParmyRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyRegistry.h; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				3D6F21D313D3179000208A82 /* ParmyAdjustmentPopover.m */,
 				3D6F21E013D31AA200208A82 /* ParmyNumericalAdjustment.h */,
 				3D6F21E113D31AA200208A82 /* ParmyNumericalAdjustment.m */,
+				3D1FD7A313D3502000FE2247 /* ParmyNudger.h */,
+				3D1FD7A413D3502000FE2247 /* ParmyNudger.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 				3D6F207213D2F2E800208A82 /* ParmyParamSelectPopover.h in Headers */,
 				3D6F21D413D3179000208A82 /* ParmyAdjustmentPopover.h in Headers */,
 				3D6F21E213D31AA200208A82 /* ParmyNumericalAdjustment.h in Headers */,
+				3D1FD7A513D3502000FE2247 /* ParmyNudger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +247,7 @@
 				3D6F207313D2F2E800208A82 /* ParmyParamSelectPopover.m in Sources */,
 				3D6F21D513D3179000208A82 /* ParmyAdjustmentPopover.m in Sources */,
 				3D6F21E313D31AA200208A82 /* ParmyNumericalAdjustment.m in Sources */,
+				3D1FD7A613D3502000FE2247 /* ParmyNudger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
