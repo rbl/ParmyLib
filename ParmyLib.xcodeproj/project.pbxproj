@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D6F1E4213D282C300208A82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6F1E4113D282C300208A82 /* UIKit.framework */; };
+		3D6F1E4713D2830A00208A82 /* ParmyLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1E4613D2830A00208A82 /* ParmyLib.h */; };
+		3D6F1E5613D2860400208A82 /* ParmyRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1E5413D2860400208A82 /* ParmyRegistry.h */; };
+		3D6F1E5713D2860400208A82 /* ParmyRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F1E5513D2860400208A82 /* ParmyRegistry.m */; };
+		3D6F1E7613D294AB00208A82 /* ParmyLibInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1E7413D294AB00208A82 /* ParmyLibInternal.h */; };
+		3D6F1E7713D294AB00208A82 /* ParmyLibInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F1E7513D294AB00208A82 /* ParmyLibInternal.m */; };
+		3D6F1ED613D2A3A800208A82 /* ParmyOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1ED413D2A3A800208A82 /* ParmyOverlay.h */; };
+		3D6F1ED713D2A3A800208A82 /* ParmyOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F1ED513D2A3A800208A82 /* ParmyOverlay.m */; };
+		3D6F1F2013D2AB6100208A82 /* ParmyMainSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1F1E13D2AB6100208A82 /* ParmyMainSelector.h */; };
+		3D6F1F2113D2AB6100208A82 /* ParmyMainSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F1F1F13D2AB6100208A82 /* ParmyMainSelector.m */; };
+		3D6F1F4813D2B0A600208A82 /* ParmyParamPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1F4613D2B0A600208A82 /* ParmyParamPicker.h */; };
+		3D6F1F4913D2B0A600208A82 /* ParmyParamPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F1F4713D2B0A600208A82 /* ParmyParamPicker.m */; };
+		3D6F1FF113D2D65300208A82 /* ParmyImageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1FEF13D2D65300208A82 /* ParmyImageFactory.h */; };
+		3D6F1FF213D2D65300208A82 /* ParmyImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F1FF013D2D65300208A82 /* ParmyImageFactory.m */; };
+		3D6F1FFE13D2DF7700208A82 /* SynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F1FFD13D2DF7700208A82 /* SynthesizeSingleton.h */; };
+		3D6F205A13D2E95200208A82 /* ParmyPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F205813D2E95200208A82 /* ParmyPopover.h */; };
+		3D6F205B13D2E95200208A82 /* ParmyPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F205913D2E95200208A82 /* ParmyPopover.m */; };
+		3D6F207213D2F2E800208A82 /* ParmyParamSelectPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F207013D2F2E800208A82 /* ParmyParamSelectPopover.h */; };
+		3D6F207313D2F2E800208A82 /* ParmyParamSelectPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F207113D2F2E800208A82 /* ParmyParamSelectPopover.m */; };
+		3D6F21D413D3179000208A82 /* ParmyAdjustmentPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F21D213D3179000208A82 /* ParmyAdjustmentPopover.h */; };
+		3D6F21D513D3179000208A82 /* ParmyAdjustmentPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F21D313D3179000208A82 /* ParmyAdjustmentPopover.m */; };
+		3D6F21E213D31AA200208A82 /* ParmyNumericalAdjustment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6F21E013D31AA200208A82 /* ParmyNumericalAdjustment.h */; };
+		3D6F21E313D31AA200208A82 /* ParmyNumericalAdjustment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F21E113D31AA200208A82 /* ParmyNumericalAdjustment.m */; };
+		AA747D9F0F9514B9006C5449 /* ParmyLib_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ParmyLib_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3D6F1E4113D282C300208A82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3D6F1E4613D2830A00208A82 /* ParmyLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParmyLib.h; path = include/ParmyLib.h; sourceTree = "<group>"; };
+		3D6F1E5413D2860400208A82 /* ParmyRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyRegistry.h; sourceTree = "<group>"; };
+		3D6F1E5513D2860400208A82 /* ParmyRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyRegistry.m; sourceTree = "<group>"; };
+		3D6F1E7413D294AB00208A82 /* ParmyLibInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyLibInternal.h; sourceTree = "<group>"; };
+		3D6F1E7513D294AB00208A82 /* ParmyLibInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyLibInternal.m; sourceTree = "<group>"; };
+		3D6F1ED413D2A3A800208A82 /* ParmyOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyOverlay.h; sourceTree = "<group>"; };
+		3D6F1ED513D2A3A800208A82 /* ParmyOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyOverlay.m; sourceTree = "<group>"; };
+		3D6F1F1E13D2AB6100208A82 /* ParmyMainSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyMainSelector.h; sourceTree = "<group>"; };
+		3D6F1F1F13D2AB6100208A82 /* ParmyMainSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyMainSelector.m; sourceTree = "<group>"; };
+		3D6F1F4613D2B0A600208A82 /* ParmyParamPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyParamPicker.h; sourceTree = "<group>"; };
+		3D6F1F4713D2B0A600208A82 /* ParmyParamPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyParamPicker.m; sourceTree = "<group>"; };
+		3D6F1FEF13D2D65300208A82 /* ParmyImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyImageFactory.h; sourceTree = "<group>"; };
+		3D6F1FF013D2D65300208A82 /* ParmyImageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyImageFactory.m; sourceTree = "<group>"; };
+		3D6F1FFD13D2DF7700208A82 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		3D6F205813D2E95200208A82 /* ParmyPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyPopover.h; sourceTree = "<group>"; };
+		3D6F205913D2E95200208A82 /* ParmyPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyPopover.m; sourceTree = "<group>"; };
+		3D6F207013D2F2E800208A82 /* ParmyParamSelectPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyParamSelectPopover.h; sourceTree = "<group>"; };
+		3D6F207113D2F2E800208A82 /* ParmyParamSelectPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyParamSelectPopover.m; sourceTree = "<group>"; };
+		3D6F21D213D3179000208A82 /* ParmyAdjustmentPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyAdjustmentPopover.h; sourceTree = "<group>"; };
+		3D6F21D313D3179000208A82 /* ParmyAdjustmentPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyAdjustmentPopover.m; sourceTree = "<group>"; };
+		3D6F21E013D31AA200208A82 /* ParmyNumericalAdjustment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyNumericalAdjustment.h; sourceTree = "<group>"; };
+		3D6F21E113D31AA200208A82 /* ParmyNumericalAdjustment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParmyNumericalAdjustment.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* ParmyLib_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParmyLib_Prefix.pch; sourceTree = "<group>"; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libParmyLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libParmyLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				3D6F1E4213D282C300208A82 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libParmyLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* NoNameLib */ = {
+			isa = PBXGroup;
+			children = (
+				3D6F1E4513D282D200208A82 /* Public */,
+				08FB77AEFE84172EC02AAC07 /* src */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = NoNameLib;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				3D6F1E4113D282C300208A82 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3D6F1FFD13D2DF7700208A82 /* SynthesizeSingleton.h */,
+				3D6F1ED313D2A3A800208A82 /* ui */,
+				3D6F1E5413D2860400208A82 /* ParmyRegistry.h */,
+				3D6F1E5513D2860400208A82 /* ParmyRegistry.m */,
+				3D6F1E7413D294AB00208A82 /* ParmyLibInternal.h */,
+				3D6F1E7513D294AB00208A82 /* ParmyLibInternal.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* ParmyLib_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		3D6F1E4513D282D200208A82 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				3D6F1E4613D2830A00208A82 /* ParmyLib.h */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		3D6F1ED313D2A3A800208A82 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				3D6F1ED413D2A3A800208A82 /* ParmyOverlay.h */,
+				3D6F1ED513D2A3A800208A82 /* ParmyOverlay.m */,
+				3D6F1F1E13D2AB6100208A82 /* ParmyMainSelector.h */,
+				3D6F1F1F13D2AB6100208A82 /* ParmyMainSelector.m */,
+				3D6F1F4613D2B0A600208A82 /* ParmyParamPicker.h */,
+				3D6F1F4713D2B0A600208A82 /* ParmyParamPicker.m */,
+				3D6F1FEF13D2D65300208A82 /* ParmyImageFactory.h */,
+				3D6F1FF013D2D65300208A82 /* ParmyImageFactory.m */,
+				3D6F205813D2E95200208A82 /* ParmyPopover.h */,
+				3D6F205913D2E95200208A82 /* ParmyPopover.m */,
+				3D6F207013D2F2E800208A82 /* ParmyParamSelectPopover.h */,
+				3D6F207113D2F2E800208A82 /* ParmyParamSelectPopover.m */,
+				3D6F21D213D3179000208A82 /* ParmyAdjustmentPopover.h */,
+				3D6F21D313D3179000208A82 /* ParmyAdjustmentPopover.m */,
+				3D6F21E013D31AA200208A82 /* ParmyNumericalAdjustment.h */,
+				3D6F21E113D31AA200208A82 /* ParmyNumericalAdjustment.m */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* ParmyLib_Prefix.pch in Headers */,
+				3D6F1E4713D2830A00208A82 /* ParmyLib.h in Headers */,
+				3D6F1E5613D2860400208A82 /* ParmyRegistry.h in Headers */,
+				3D6F1E7613D294AB00208A82 /* ParmyLibInternal.h in Headers */,
+				3D6F1ED613D2A3A800208A82 /* ParmyOverlay.h in Headers */,
+				3D6F1F2013D2AB6100208A82 /* ParmyMainSelector.h in Headers */,
+				3D6F1F4813D2B0A600208A82 /* ParmyParamPicker.h in Headers */,
+				3D6F1FF113D2D65300208A82 /* ParmyImageFactory.h in Headers */,
+				3D6F1FFE13D2DF7700208A82 /* SynthesizeSingleton.h in Headers */,
+				3D6F205A13D2E95200208A82 /* ParmyPopover.h in Headers */,
+				3D6F207213D2F2E800208A82 /* ParmyParamSelectPopover.h in Headers */,
+				3D6F21D413D3179000208A82 /* ParmyAdjustmentPopover.h in Headers */,
+				3D6F21E213D31AA200208A82 /* ParmyNumericalAdjustment.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* ParmyLIb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ParmyLIb" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParmyLIb;
+			productName = NoNameLib;
+			productReference = D2AAC07E0554694100DB518D /* libParmyLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ParmyLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* NoNameLib */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* ParmyLIb */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D6F1E5713D2860400208A82 /* ParmyRegistry.m in Sources */,
+				3D6F1E7713D294AB00208A82 /* ParmyLibInternal.m in Sources */,
+				3D6F1ED713D2A3A800208A82 /* ParmyOverlay.m in Sources */,
+				3D6F1F2113D2AB6100208A82 /* ParmyMainSelector.m in Sources */,
+				3D6F1F4913D2B0A600208A82 /* ParmyParamPicker.m in Sources */,
+				3D6F1FF213D2D65300208A82 /* ParmyImageFactory.m in Sources */,
+				3D6F205B13D2E95200208A82 /* ParmyPopover.m in Sources */,
+				3D6F207313D2F2E800208A82 /* ParmyParamSelectPopover.m in Sources */,
+				3D6F21D513D3179000208A82 /* ParmyAdjustmentPopover.m in Sources */,
+				3D6F21E313D31AA200208A82 /* ParmyNumericalAdjustment.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ParmyLib.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ParmyLib_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = ParmyLib;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/ParmyLib.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ParmyLib_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = ParmyLib;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ParmyLIb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ParmyLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

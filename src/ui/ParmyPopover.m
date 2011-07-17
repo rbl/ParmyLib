@@ -1,0 +1,124 @@
+//
+//  ParmyPopover.m
+//  NoNameLib
+//
+//  Created by Tom Seago on 7/17/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "ParmyPopover.h"
+
+#import "ParmyImageFactory.h"
+
+@implementation ParmyPopover
+
+@synthesize parent = _parent;
+@synthesize windowFrame = _windowFrame;
+@synthesize windowNib = _windowNib;
+
+@synthesize view = _view;
+@synthesize delegate = _delegate;
+
+-(id) initOnView:(UIView*)parent
+{    
+	self = [super initWithFrame:[[UIApplication sharedApplication] keyWindow].bounds];
+    if (self) 
+	{
+		self.parent = parent;
+		self.windowFrame = [[[UIImageView alloc] initWithImage:[[ParmyImageFactory sharedInstance] popoverFrame]] autorelease];
+		_windowFrame.userInteractionEnabled = YES;
+		
+		UITapGestureRecognizer* tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(externalTap:)] autorelease];
+		tap.delegate = self;
+		[self addGestureRecognizer:tap];
+    }
+    return self;
+}
+
+-(void) present
+{
+	if ([_delegate respondsToSelector:@selector(willPresentPopover:)])
+	{
+		[_delegate willPresentPopover:self];
+	}
+	
+	// For now always put our window frame at a fixed position from the 
+	// parent view.
+	UIWindow* win = [[UIApplication sharedApplication] keyWindow];
+	CGRect pf = [win convertRect:_parent.frame fromView:_parent];
+	
+	self.windowNib = [[[UIImageView alloc] initWithImage:[[ParmyImageFactory sharedInstance] popoverFrameNibPointedUp:YES]] autorelease];
+	
+	CGPoint anchor = CGPointMake(pf.origin.x + (pf.size.width/2), pf.origin.y + pf.size.height);
+	
+	float wfWidth = 200;
+	float wfHeight = 200;
+
+	CGRect wfFrame = CGRectMake(anchor.x - (wfWidth/2), anchor.y + _windowNib.bounds.size.height,
+								wfWidth, wfHeight);
+	
+	_windowFrame.frame = wfFrame;
+	[self addSubview:_windowFrame];
+	
+	CGRect nibFrame = CGRectMake(anchor.x - (_windowNib.bounds.size.width/2),
+								 anchor.y,
+								 _windowNib.bounds.size.width,
+								 _windowNib.bounds.size.height);
+	_windowNib.frame = nibFrame;
+	[self addSubview:_windowNib];
+	
+	CGRect childFrame = CGRectMake(10,10,wfWidth-20,wfHeight-20);
+	_view.frame = childFrame;
+	[_windowFrame addSubview:_view];
+
+	if ([_delegate respondsToSelector:@selector(didPresentPopover:)])
+	{
+		[_delegate didPresentPopover:self];
+	}
+	
+	// Don't forget to add ourself to the window or no one can see us!
+	[win addSubview:self];
+}
+
+-(void) dealloc 
+{
+	self.parent = nil;
+	self.windowFrame = nil;
+	self.view = nil;
+	
+    [super dealloc];
+}
+
+-(void) hidePopover
+{
+	if ([_delegate respondsToSelector:@selector(willHidePopover:)])
+	{
+		[_delegate willHidePopover:self];
+	}
+	
+	[self removeFromSuperview];
+	
+	if ([_delegate respondsToSelector:@selector(didHidePopover:)])
+	{
+		[_delegate didHidePopover:self];
+	}	
+}
+
+
+-(void) externalTap:(id)recognizer
+{
+	[self hidePopover];
+}
+
+
+-(BOOL) gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch
+{
+	CGPoint loc = [touch locationInView:self];
+	
+	CGRect wf = _windowFrame.frame;
+	
+	BOOL result = !CGRectContainsPoint(wf, loc);
+	return result;
+}
+
+@end
