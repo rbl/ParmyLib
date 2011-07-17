@@ -31,6 +31,9 @@
 		UITapGestureRecognizer* tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(externalTap:)] autorelease];
 		tap.delegate = self;
 		[self addGestureRecognizer:tap];
+		
+		_width = 200;
+		_height = 200;
     }
     return self;
 }
@@ -51,10 +54,10 @@
 	
 	CGPoint anchor = CGPointMake(pf.origin.x + (pf.size.width/2), pf.origin.y + pf.size.height);
 	
-	float wfWidth = 200;
-	float wfHeight = 200;
+	float wfWidth = _width;
+	float wfHeight = _height;
 
-	CGRect wfFrame = CGRectMake(anchor.x - (wfWidth/2), anchor.y + _windowNib.bounds.size.height,
+	CGRect wfFrame = CGRectMake(anchor.x - (wfWidth/2), anchor.y + _windowNib.bounds.size.height - 4,
 								wfWidth, wfHeight);
 	
 	_windowFrame.frame = wfFrame;

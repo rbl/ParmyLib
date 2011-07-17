@@ -29,7 +29,7 @@
 	if ((self = [super initWithFrame:CGRectMake(0,0,100,100)]))
 	{
 		_delegate = delegate;
-		self.backgroundColor = [UIColor blueColor];
+		self.backgroundColor = [UIColor whiteColor];
 		
 //		CGRect frame = CGRectMake(30, 30, 30, 30);
 //		UIView* v = [[[UIView alloc] initWithFrame:frame] autorelease];
@@ -254,9 +254,9 @@
 
 -(void) updateLabels
 {
-	_currentLabel.text = [NSString stringWithFormat:@"%.0f", _slider.value];
-	_minLabel.text = [NSString stringWithFormat:@"%.0f", _slider.minimumValue];
-	_maxLabel.text = [NSString stringWithFormat:@"%.0f", _slider.maximumValue];
+	_currentLabel.text = [NSString stringWithFormat:@"%.2f", _slider.value];
+	_minLabel.text = [NSString stringWithFormat:@"%.2f", _slider.minimumValue];
+	_maxLabel.text = [NSString stringWithFormat:@"%.2f", _slider.maximumValue];
 	
 	[_slider setValue:_slider.value+0.1 animated:NO];
 	[_slider setValue:_slider.value animated:YES];

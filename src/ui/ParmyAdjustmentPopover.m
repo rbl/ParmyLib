@@ -30,7 +30,10 @@
 		_set = set;
 		self.key = key;
 		
-		self.view = [[[UIView alloc] initWithFrame:CGRectMake(0,0,100,100)] autorelease];
+		_width = 300;
+		_height = 160;
+		
+		self.view = [[[UIView alloc] initWithFrame:CGRectMake(0,0,_width,_height)] autorelease];
 		self.view.backgroundColor = [UIColor redColor];
 		
 		// Find the right type of adjustment sub-view to load
@@ -59,7 +62,7 @@
 {
 	self.adjView = [[[ParmyNumericalAdjustment alloc] initForValue:num withDelegate:self] autorelease];
 	
-	//_adjView.frame = CGRectMake(0,0,200,100);
+	_adjView.frame = CGRectMake(0,0,_width,_height);
 	_adjView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	
 	[_view addSubview:_adjView];

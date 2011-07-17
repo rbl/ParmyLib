@@ -31,6 +31,9 @@
 	UIView* _view;
 	
 	id<ParmyPopoverDelegate> _delegate;
+	
+	float _width;
+	float _height;
 }
 
 @property (nonatomic, assign) UIView *parent;
