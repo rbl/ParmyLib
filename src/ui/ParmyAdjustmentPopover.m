@@ -34,7 +34,7 @@
 		_height = 160;
 		
 		self.view = [[[UIView alloc] initWithFrame:CGRectMake(0,0,_width,_height)] autorelease];
-		self.view.backgroundColor = [UIColor redColor];
+		self.view.backgroundColor = [UIColor clearColor];
 		
 		// Find the right type of adjustment sub-view to load
 		NSObject* obj = [[ParmyRegistry sharedInstance] objectInSet:_set forKey:_key];

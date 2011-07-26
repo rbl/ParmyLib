@@ -45,7 +45,7 @@ CGFloat gWidth;
 				   forState:UIControlStateNormal];
 		[_btnParam setBackgroundImage:[[ParmyImageFactory sharedInstance] leftCapsuleAtWidth:64.0 forState:PImageStatePressed]
 				   forState:UIControlStateSelected];
-		[_btnParam setTitle:@"Param" forState:UIControlStateNormal];
+		[_btnParam setTitle:@"Choose Parameter" forState:UIControlStateNormal];
 		[self addSubview:_btnParam];
 		[_btnParam addTarget:self action:@selector(actionParam:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -123,7 +123,7 @@ CGFloat gWidth;
 		else
 		{
 			// Get a proper sizing
-			[self selectedParamKey:@"Param"];
+			[self selectedParamKey:@"Choose Parameter"];
 			
 			// Now might as well center it on the screen
 			frame = [[UIApplication sharedApplication] keyWindow].bounds;
@@ -183,8 +183,7 @@ CGFloat gWidth;
 {
 	_pressed.selected = NO;
 	_pressed = nil;
-	
-	if ([_btnParam.titleLabel.text isEqual:@"Param"]) return;
+	if ([_btnParam.titleLabel.text isEqual:@"Choose Parameter"]) return;
 	
 	sender.selected = YES;
 

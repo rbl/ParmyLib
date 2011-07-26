@@ -22,7 +22,7 @@
     if (self) 
 	{
 		self.view = [[[UIView alloc] initWithFrame:CGRectMake(0,0,100,100)] autorelease];
-		self.view.backgroundColor = [UIColor purpleColor];
+		self.view.backgroundColor = [UIColor clearColor];
 		
 		// Initialize our data from the registry
 		self.paramKeys = [[[ParmyRegistry sharedInstance] 
@@ -36,11 +36,15 @@
 		_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		_tableView.dataSource = self;
 		_tableView.delegate = self;
-		
+        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.separatorColor = [UIColor colorWithWhite:0.0f alpha:0.3f];
+        
 		[self.view addSubview:_tableView];
     }
     return self;
 }
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -77,6 +81,8 @@
 	}
 	
 	NSString* key = [_paramKeys objectAtIndex:indexPath.row];
+    cell.textLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.8];
+    cell.detailTextLabel.textColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
 	cell.textLabel.text = key;
 	cell.detailTextLabel.text = [[ParmyRegistry sharedInstance] stringForKey:key withDefault:@""];
 	

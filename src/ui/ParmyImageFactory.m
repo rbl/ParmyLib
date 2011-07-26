@@ -61,7 +61,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ParmyImageFactory)
 
 -(UIImage*) popoverFrame
 {
-	return [[UIImage imageNamed:@"Parmy-popoverFrame.png"] stretchableImageWithLeftCapWidth:25 topCapHeight:0];
+	return [[UIImage imageNamed:@"Parmy-popoverFrame.png"] stretchableImageWithLeftCapWidth:10.0f topCapHeight:10.0f];
 }
 
 -(UIImage*) popoverFrameNibPointedUp:(BOOL)pointedUp

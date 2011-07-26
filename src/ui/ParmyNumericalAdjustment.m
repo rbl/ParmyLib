@@ -29,7 +29,7 @@
 	if ((self = [super initWithFrame:CGRectMake(0,0,100,100)]))
 	{
 		_delegate = delegate;
-		self.backgroundColor = [UIColor whiteColor];
+		self.backgroundColor = [UIColor clearColor];
 		
 //		CGRect frame = CGRectMake(30, 30, 30, 30);
 //		UIView* v = [[[UIView alloc] initWithFrame:frame] autorelease];
@@ -148,6 +148,11 @@
 		nudger.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
 		[self addSubview:nudger];
 		
+        
+        
+        _currentLabel.textColor = [UIColor whiteColor];
+        _minLabel.textColor = [UIColor whiteColor];
+        _maxLabel.textColor = [UIColor whiteColor];
 		
 		[self updateLabels];
 	}

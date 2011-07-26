@@ -27,8 +27,8 @@
 		CGRect bf = CGRectMake(0, 0, frame.size.width/2, frame.size.height);
 		
 		self.btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-		[_btnLeft setBackgroundColor:[UIColor whiteColor]];
-		[_btnLeft setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+		[_btnLeft setBackgroundColor:[UIColor clearColor]];
+		[_btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[_btnLeft setTitle:@"<" forState:UIControlStateNormal];
 		_btnLeft.frame = bf;
 		_btnLeft.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
@@ -37,8 +37,8 @@
 		
 		bf.origin.x += bf.size.width;
 		self.btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
-		[_btnRight setBackgroundColor:[UIColor whiteColor]];
-		[_btnRight setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+		[_btnRight setBackgroundColor:[UIColor clearColor]];
+		[_btnRight setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[_btnRight setTitle:@">" forState:UIControlStateNormal];
 		_btnRight.frame = bf;
 		_btnRight.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
